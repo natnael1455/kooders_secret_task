@@ -56,22 +56,6 @@ body {
     color: rgb(185, 3, 3);
 }
 
-blockquote p::before { 
-    content: open-quote;
-	font-size: 54;
-	font-family: Arial;
-    font-weight: bold;
-	color:rgb(185, 3, 3);
-} 
-
-blockquote p::after { 
-    content: close-quote;
-	font-size: 54;
-	font-family: 'Arial Black';
-    font-weight: bold;
-	color:rgb(185, 3, 3);
-}
-	
 #col1{
 	background:url(images/col1.jpg) rgba(209, 91, 91, 0.8);
 	background-size: cover;
@@ -95,20 +79,22 @@ blockquote p::after {
 	text-align: center;
 	text-decoration: none;
 	margin: 5px 2px;
-	color: rgb(58, 57, 57);
 	border-radius:2px; 
 }
 
+.fa-quote-right, .fa-quote-left{
+	font-size: 24px;
+	color:rgb(185, 3, 3);
+}
 .fa:hover {
 	opacity: 0.7;
 	color: rgb(58, 57, 57);
 }
-.fa-facebook {
+.fa-facebook ,.fa-linkedin{
 	background: white;
+	color: rgb(58, 57, 57);
 }
-.fa-linkedin {
-	background: white;
-}
+ 
 </style>
 
 <body >
@@ -141,10 +127,13 @@ blockquote p::after {
 			</div>
 			<div class="col-md-7">
 				<blockquote class="blockquote text-md-center">
+					
 				<p class="text-capitalize font-italic text-light ">
-					 I'm a standup comedian who can't drive. I have never learned. I don't trust my hand-eye coordination.
+					<i class="fa fa-quote-left"></i>    I'm a standup comedian who can't drive. I have never learned. I don't trust my hand-eye coordination.
 			 		You're looking at someone who once dropped a cricket ball on to his own head during a routine catching practice; I don't think it's a great idea to have me in control of a high-speed metal death robot.
+				 <i class="fa fa-quote-right"></i>
 				</p>
+				
 				<footer class="blockquote-footer text-danger"> 
 					<cite>Nish kumar</cite></footer>
 			</blockquote>
