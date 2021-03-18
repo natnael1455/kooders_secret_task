@@ -1,0 +1,326 @@
+ <!-- Bootstrap documentation: https://getbootstrap.com/docs/4.6/getting-started/introduction/ -->
+
+<!-- General: If the attached png has something going all the way to the sides it's supposed to stretch to the edge of users screen. 
+	If there's clearly empty room (like in Nakkivene Ry section) the content is supposed to be within Bootstrap "container" 
+	https://getbootstrap.com/docs/4.6/layout/overview/#containers
+
+
+We like clear division of content so with header, red-strip, Nakkivene Ry section etc. we hope that you'd use <section> tag as the outest tag.
+Div content is most often within:
+<section class="py-5> (Check out what py-5 does. It's useful in other parts aswell)
+	<div class="container">
+		<div class="row">
+			<div class="cols of different sorts">
+
+( https://getbootstrap.com/docs/4.6/layout/grid/ ) -->
+<html>
+<head>
+<title>natnael</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<style>
+/* Put your own CSS here */
+body {
+	background-color:white;
+	}
+	#header-section , #floor-section{
+	background:url(images/header.jpg) rgb(52, 53, 56);
+	background-size: cover;
+	background-blend-mode: multiply;
+	}
+	#open-section{
+		background:url(images/open.jpg) rgb(52, 53, 56);
+		background-size: cover;
+		background-blend-mode: multiply;
+	}
+
+/* change the brand and text color */
+.navbar-light .navbar-brand,
+.navbar-light .navbar-text {
+    color: rgba(255,255,255);
+}
+
+/* change the link color */
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(180, 180, 180);
+}
+/* change the color of active or hovered links */
+.navbar-light .nav-item.active .nav-link ,
+.navbar-light .nav-item .nav-link:active ,
+.navbar-light .nav-item .nav-link:focus,
+.navbar-light .nav-item:hover .nav-link {
+    color: rgb(185, 3, 3);
+}
+
+blockquote p::before { 
+    content: open-quote;
+	font-size: 54;
+	font-family: Arial;
+    font-weight: bold;
+	color:rgb(185, 3, 3);
+} 
+
+blockquote p::after { 
+    content: close-quote;
+	font-size: 54;
+	font-family: 'Arial Black';
+    font-weight: bold;
+	color:rgb(185, 3, 3);
+}
+	
+#col1{
+	background:url(images/col1.jpg) rgba(209, 91, 91, 0.8);
+	background-size: cover;
+	background-blend-mode: multiply;
+}
+
+#col2{
+	background:url(images/col2.jpg) rgba(209, 91, 91, 0.8);
+	background-size: cover;
+	background-blend-mode: multiply;
+}
+#col3{
+	background:url(images/col3.jpg) rgba(209, 91, 91, 0.8);
+	background-size: cover;
+	background-blend-mode: multiply;
+}
+.fa {  
+	width: 20px;
+	font-size: 15px;
+	padding-top: 5px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	color: rgb(58, 57, 57);
+	border-radius:2px; 
+}
+
+.fa:hover {
+	opacity: 0.7;
+	color: rgb(58, 57, 57);
+}
+.fa-facebook {
+	background: white;
+}
+.fa-linkedin {
+	background: white;
+}
+</style>
+
+<body >
+	<section class="py-5" id="header-section"  name="header-section">
+	<!-- Navigation: Logo should be on the left and links on the right. Navbar filling the screen width. Use bootstrap "navbar" for this. 
+		The navigation doesn't have to work. It's more about the layout. -->
+		<nav class="navbar navbar-expand-md navbar-light bg-transparent">
+			<a href="#" class="navbar-brand">Joku logo tänne navbar-brandiin</a>
+    		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        		<span class="navbar-toggler-icon"></span>
+    		</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="nav navbar-nav text-center ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="#header-section">Etusivu<span class="sr-only">(current)</span></a></li>
+						<li class="nav-item"><a class="nav-link" href="#red-section">Palvelut</a></li>
+						<li class="nav-item"><a class="nav-link" href="#Nakkivene-section">Referenssit</a></li>
+						<li class="nav-item"><a class="nav-link" href="#Nakkivene-section">Galéria</a></li>
+						<li class="nav-item"><a class="nav-link" href="#open-section">Rekry</a></li>
+						<li class="nav-item"><a class="nav-link" href="#floor-section">Yhteystiedot</a></li>
+					</ul>
+			</div>
+		</nav>
+	<!-- Header-section: In here put content in two columns: First one has an image and second one should have a quote of some sorts.
+	 They should be aligned to center. Without giving the solution away fully using the "spacing" part of documentation and combining it with "auto" 
+	 selector will give you vertical alignment. https://getbootstrap.com/docs/4.6/utilities/spacing/ -->
+	<div class="container-fluid">
+		<div class="row align-items-center">
+			<div class="col-md-5">
+				<img src="images/robot.jpg" class="img-fluid rounded" alt="Rounded Image">
+			</div>
+			<div class="col-md-7">
+				<blockquote class="blockquote text-md-center">
+				<p class="text-capitalize font-italic text-light ">
+					 I'm a standup comedian who can't drive. I have never learned. I don't trust my hand-eye coordination.
+			 		You're looking at someone who once dropped a cricket ball on to his own head during a routine catching practice; I don't think it's a great idea to have me in control of a high-speed metal death robot.
+				</p>
+				<footer class="blockquote-footer text-danger"> 
+					<cite>Nish kumar</cite></footer>
+			</blockquote>
+		</div>
+	</div>
+
+	</section>
+
+	<section  id="red-section" name="red-section">
+		<!-- In the red "Joku juttu"-section the boxes are supposed to have different amounts of text but all content should still be centered within the "button" -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4  d-flex" id="col1">
+					<div class="row py-5 mt-auto mx-auto">
+						<div class="col-md-12 ">
+							<h5 class="text-center text-capitalize  text-light"> tilte 1</h5>
+							<p class="text-center text-capitalize  text-light ">
+								working here.
+				   			</p>
+						</div>
+					</div>
+							
+				</div>
+				<div class="col-md-4 d-flex" id="col2">
+					<div class="row py-5 mt-auto mx-auto">
+						<div class="col-md-12 ">
+							<h5 class="text-center text-capitalize  text-light">Title 2</h5>
+							<p class="text-center text-capitalize  text-light">
+								I'm a standup comedian who can't drive. I have never learned. I don't trust my hand-eye coordination.
+								You're looking at someone who once dropped a cricket ball on to his own head during a routine catching practice; I don't think it's a great idea to have me in control of a high-speed metal death robot.
+				   			</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex" id="col3">
+					<div class="row py-5 mt-auto mx-auto">
+						<div class="col-md-12 ">
+							<h5 class="text-center text-capitalize  text-light">Title 3</h5>
+							<p class="text-center text-capitalize  text-light">
+								I'm a standup comedian who can't drive. I have never learned. 
+				   			</p>
+						</div>
+					</div>
+				</div>		
+			</div>
+		</div>
+	</section>
+
+	<section class="py-5 px-5" id="Nakkivene-section" name="Nakkivene-section">
+		<!-- In the Nakkivene Ry section you can talk about yourself. You can add your motivation letter/application again. No need to come up with anything new -->
+		<h4 class="text-center text-capitalize  text-danger">Nakkivene Ry</h4>
+		<h6 class="text-center text-capitalize  text-dark">-Veneilee nakkeja-<h6>
+		<p class="text-center text-capitalize  text-dark">
+			As a software developer, the software solution that gooders provide piqued my interest. When reviewing the job
+			requirements and your website, I was excited to see that my qualifications and personal traits align with your
+			needs and mission.
+		</p>
+		<p class="text-center text-capitalize  text-dark">
+			I bring a set of talents that I believe will be valuable to kooders. In my computer engineering teacher and
+			students advisor role in my home country, my master's education that I am finishing here at the university of
+			eastern Finland and software developer for the Joensuu science society ry, I honed my abilities in
+			understanding different languages (javascript, PHP, react, Node js, c/c++, java, and python) as well as the ionic
+			framework. as well as understanding major AI concepts in machine learning and robotics and implementing
+			them with help of some libraries( like TensorFlow or NumPy or panda). which provides a solid foundation for
+			the web developer position in your organization. my experience with programming hardware devices, robotics,
+			and google cloud platform make me a stored potential for developing IoT solutions and other related projects.
+			My collaboration strength, people-centric nature, and eagerness to please have afforded me excellent
+			interpersonal skills.
+		</p>
+		<p class="text-center text-capitalize  text-dark">
+			I am excited to contribute my strengths and proficiency in communication to your team efforts. As an
+			extroverted and personable communicator, my focus on building strong professional relationships has been a
+			valuable asset throughout my career. You may notice a gap in my employment while reviewing my resume.
+			During this period, I elected to take a leave from the workforce in order to go back to school. The time that I was
+			able to commit to my education has been invaluable to my professional growth, and I am eager to re-enter the
+			professional sphere and apply my new found qualifications and knowledge to the job.
+		</p>
+		<p class="text-center text-capitalize  text-dark">
+			Please review my resume and collection of projects for a complete collection of my work history and
+			accomplishments. I would like to schedule an interview at your earliest convenience and will contact you next
+			week to check on your availability. I look forward to discussing how my personality and work history fit the
+			Robotics Development role.
+		</p>
+	</section>
+
+	<section class="py-5 px-5" id="open-section" name="open-section">
+		<!-- Do what you want with the backgrounded section and feel free to add more sections -->
+		<table class="table table-dark table-striped table-hover table-responsive-md">
+			<thead class="thead-light">
+				<tr>
+					<th>Row</th>
+					<th>School Name</th>
+					<th>School type</th>
+					<th>Year</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						1
+					</td>
+					<td>
+						Awet
+					</td>
+					<td>
+						Elementary and junior
+					</td>
+					<td>
+						1994-2001
+					</td>
+				</tr>
+				<tr>
+					<td>
+						2
+					</td>
+					<td>
+						Denden
+					</td>
+					<td>
+						Secondry
+					</td>
+					<td>
+						2001-2005
+					</td>
+				</tr>
+				<tr>
+					<td>
+						3
+					</td>
+					<td>
+						Eritrea institute of tech
+					</td>
+					<td>
+						college
+					</td>
+					<td>
+						2006-2012
+					</td>
+				</tr>
+				<tr>
+					<td>
+						4
+					</td>
+					<td>
+						Universty of Easter finland
+					</td>
+					<td>
+						University
+					</td>
+					<td>
+						current
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section class="py-5 px-5" id="floor-section" name="floor-section">
+		<!-- You can add some social medias to the footer -->
+		<h5 class="text-light text-center">Someja voi laittaa tänna</h5>
+		
+			
+					<p class="text-center">
+						<a href="https://www.facebook.com/natiyac" class="fa fa-facebook"></a>
+						<a href="https://www.linkedin.com/in/natnael-yacob-asgedom-780374131/" class="fa fa-linkedin"></a>
+					</p>
+				
+		
+	</section>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</html>
+<script>
+/* Add your custom javascript here. Use jquery as much as possible. You can do some tweaks to the site with javascript */
+</script>
